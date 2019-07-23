@@ -1,2 +1,2 @@
-# HackerEarth-Practice
-Practice problems.
+# CCDSAP-Foundation
+All the problems, covering the whole Foundation syllabus
