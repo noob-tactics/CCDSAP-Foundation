@@ -1,0 +1,38 @@
+
+# Checking if a string is a Pangrammatic lipogram 
+
+
+def checkPanLipogram(input):
+    
+    letterCounter = {'a': 0, 'b': 0, 'c': 0, 'd': 0, 'e': 0,  
+               'f': 0, 'g': 0, 'h': 0, 'i': 0, 'j': 0,  
+               'k': 0, 'l': 0, 'm': 0, 'n': 0, 'o': 0,  
+               'p': 0, 'q': 0, 'r': 0, 's': 0, 't': 0,  
+               'u': 0, 'v': 0, 'w': 0, 'x': 0, 'y': 0,  
+               'z': 0}
+    
+    input = input.lower();
+               
+    for letter in input:
+        if(letter.isalpha()):
+            letterCounter[letter]+=1
+    
+    countValues = list(letterCounter.values())
+    
+    if(countValues.count(0) > 1):
+        print('Lipogram but not a pangram')
+    elif(countValues.count(0) == 1):
+        print('Pangrammatic lipogram !!')
+    elif(countValues.count(0) < 1):
+        print('Pangram but not a lipogram')
+        
+# Driver
+def main(): 
+    checkPanLipogram("The quick brown fox jumped over the lazy dog") 
+    checkPanLipogram("The quick brown fox jumps over the lazy dog") 
+    checkPanLipogram("The quick brown fox jum over the lazy dog") 
+  
+if __name__ == '__main__': 
+    main()
+        
+    
